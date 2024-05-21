@@ -198,6 +198,28 @@
           font-size: 1.2em;
         }
       }
+
+      .load-more-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #load-more-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .hidden-programs {
+        display: none;
+      }
+
+      .hidden-programs.show-hidden-programs {
+        display: block;
+      }
     </style>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -421,6 +443,57 @@
           <p><strong>Eligibility Criteria:</strong> Must be a university student or recent graduate, relevant field of study</p>
           <p><strong>Program Highlights:</strong> Professional internship experience, networking opportunities, cultural activities</p>
         </div>
+        <div class="hidden-programs">
+          <div class="card">
+            <img src="/assets/france.webp" alt="Program Thumbnail" />
+            <h3>French Language Immersion in France</h3>
+            <p><strong>Destinations:</strong> Paris, Lyon</p>
+            <p><strong>Duration:</strong> 8 weeks</p>
+            <p><strong>Eligibility Criteria:</strong> Must be at least 18 years old, no language prerequisite</p>
+            <p><strong>Program Highlights:</strong> Intensive French language classes, cultural activities, homestay experience</p>
+          </div>
+
+          <div class="card">
+            <img src="/assets/china.jpg" alt="Program Thumbnail" />
+            <h3>Study Abroad in China</h3>
+            <p><strong>Destinations:</strong> Beijing, Shanghai</p>
+            <p><strong>Duration:</strong> 1 semester</p>
+            <p><strong>Eligibility Criteria:</strong> Must be enrolled in a university, basic proficiency in Mandarin</p>
+            <p><strong>Program Highlights:</strong> Courses in Chinese culture and history, language exchange opportunities, sightseeing tours</p>
+          </div>
+          <div class="card">
+            <img src="/assets/uk.png" alt="Program Thumbnail" />
+            <h3>Summer Internship in the United Kingdom</h3>
+            <p><strong>Destinations:</strong> London, Edinburgh</p>
+            <p><strong>Duration:</strong> 10 weeks</p>
+            <p><strong>Eligibility Criteria:</strong> Must be a university student, relevant field of study</p>
+            <p><strong>Program Highlights:</strong> Professional work experience in UK companies, cultural immersion, networking events</p>
+          </div>
+
+          <div class="card">
+            <img src="/assets/canada.jpeg" alt="Program Thumbnail" />
+            <h3>Exchange Program in Canada</h3>
+            <p><strong>Destinations:</strong> Toronto, Vancouver</p>
+            <p><strong>Duration:</strong> 1 academic year</p>
+            <p><strong>Eligibility Criteria:</strong> Must be enrolled in a university, minimum GPA of 3.0</p>
+            <p><strong>Program Highlights:</strong> Courses in Canadian studies, outdoor adventure activities, multicultural experiences</p>
+          </div>
+        </div>
+        <div class="load-more-container">
+          <button id="load-more-btn">Load More</button>
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const loadMoreBtn = document.getElementById("load-more-btn");
+            const hiddenPrograms = document.querySelector(".hidden-programs");
+
+            loadMoreBtn.addEventListener("click", function () {
+              hiddenPrograms.classList.toggle("show-hidden-programs");
+              loadMoreBtn.style.display = "none";
+            });
+          });
+        </script>
       </div>
 
       <footer>
